@@ -1,0 +1,10 @@
+﻿<T:DialogBase x:Class="PurchaseSellStock.DialogRegister"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:T="clr-namespace:PurchaseSellStock.Template"
+        xmlns:properties="clr-namespace:PurchaseSellStock.Properties"
+        Title="注册软件" Height="248" Width="392">
+    <Grid>
+        <T:TextBoxAc x:Name="text1" Text="dsfad" Label="软件序列号:" LabelWidth="50" Width="100" Style="{StaticResource textBoxAcLineStyle}" Margin="0,0,0,172" />
+    </Grid>
+</T:DialogBase>

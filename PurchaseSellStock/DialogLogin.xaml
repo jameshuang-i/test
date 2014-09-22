@@ -1,0 +1,41 @@
+﻿<WTemplate:DialogBase x:Class="PurchaseSellStock.DialogLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WTemplate="clr-namespace:PurchaseSellStock.Template"
+        xmlns:properties="clr-namespace:PurchaseSellStock.Properties"
+        Title="{Binding Path=Title,Source={x:Static properties:Settings.Default}}" Height="252" Width="368" WindowStartupLocation="CenterScreen" Icon="/PurchaseSellStock;component/Images/Logo.ico" Loaded="DialogBase_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="23" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="23" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="23" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="90" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Image Source="Images/User.ico" Width="20" Height="23" Stretch="Fill" Margin="3 0 0 0"/>
+            <ComboBox Name="comboxUserName" VerticalAlignment="Top" Width="140" Height="23" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Image Source="Images/Password.ico" Width="23" Height="23" Stretch="Fill" />
+            <PasswordBox Name="textPassword" Width="140" Style="{StaticResource passwordBoxLineStyle}" KeyDown="textPassword_KeyDown" />
+        </StackPanel>
+
+        <Label Name="labMessage" Foreground="Red" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" Height="28" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+        <Button Content="登 录" Name="btnLogin" Click="btnLogin_Click" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Grid.Column="1" Grid.Row="5" Background="Green"></Button>
+        <TextBox Text="{Binding Path=MachineSerial,Source={x:Static properties:Settings.Default}}" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="Gray" Background="Transparent" IsReadOnly="True" BorderThickness="0" IsTabStop="False"/>
+        <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="0 0 10 0">
+            <Hyperlink NavigateUri="{Binding Path=HelpPage, Source={x:Static properties:Settings.Default}}" RequestNavigate="Hyperlink_RequestNavigate">
+                帮助?  
+            </Hyperlink>
+        </TextBlock>
+        
+    </Grid>
+</WTemplate:DialogBase>
